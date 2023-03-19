@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./auth.css">
+</head>
+<body>
+    <button id="login_id">Login</button>
+    <button id="register_id">Register</button>
+    <div id="modal_login_id" class="modal">
+        <form action="" method="post">
+            <h1>Đăng nhập</h1>
+            <div class="form-group">
+                <label for="username">Tên tài khoản</label>
+                <input type="text" class="form-control" id="username"  placeholder="Nhập tên tài khoản">
+                <span class="form-message-error">lỗi</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" class="form-control" id="password"  placeholder="Nhập mật khẩu">
+                <span class="form-message-error">lỗi</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Đăng nhập</button>
+
+            <div class="form-group form-group-link">
+            <span  id="register" class="form-link">Đăng kí</span>
+            <a href="" class="form-link">Quên mật khẩu?</a>
+            </div>
+            <button id="close-modal" class="btn-close" type="button">close</button>
+        </form>
+    </div>
+
+    <div id="modal_register_id" class="modal">
+        <form action="" method="post">
+            <h1>Đăng kí</h1>
+            <div class="form-group">
+                <label for="username">Tên tài khoản</label>
+                <input type="text" class="form-control" id="username"  placeholder="Nhập tên tài khoản">
+                <span class="form-message-error">lỗi</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" class="form-control" id="password"  placeholder="Nhập mật khẩu">
+                <span class="form-message-error">lỗi</span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" class="form-control" id="password"  placeholder="Nhập mật khẩu">
+                <span class="form-message-error">lỗi</span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" class="form-control" id="password"  placeholder="Nhập mật khẩu">
+                <span class="form-message-error">lỗi</span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" class="form-control" id="password"  placeholder="Nhập mật khẩu">
+                <span class="form-message-error">lỗi</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Đăng kí</button>
+
+            <div class="form-group form-group-link">
+            <span id="login" class="form-link">Đăng nhập</span>
+            </div>
+            <button id="close-modal-register" class="btn-close" type="button">close</button>
+        </form>
+    </div>
+
+    <script src="./handlerAuth.js"></script>
+</body>
+</html>
