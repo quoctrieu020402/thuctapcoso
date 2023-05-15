@@ -55,7 +55,7 @@
 			</c:if>
 			<tr style="font-weight:bold; text-align:center">
 				
-				<td colspan="5" class="thanhtoan" onclick="redirectPage(`<c:url value='/user/cart/confirm'/>`)"> Xác nhận mua hàng </td>
+				<td colspan="5" class="thanhtoan" onclick="redirectPage(`<c:url value='/user/order'/>`)"> Xác nhận mua hàng </td>
 				<td class="xoaHet" onclick="redirectPage(`<c:url value='/user/cart/remove/all'/>`)"> Xóa hết </td>
 			</tr>
 			

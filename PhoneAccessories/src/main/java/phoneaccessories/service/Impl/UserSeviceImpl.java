@@ -63,4 +63,10 @@ public class UserSeviceImpl implements UserService{
 
 	}
 
+	@Override
+	public void update(User user) {
+		
+		userRepository.save(user);
+	}
+
 }

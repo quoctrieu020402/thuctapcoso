@@ -57,34 +57,38 @@
 				<p style="font-size: 22px; color: gray">Gửi thông tin liên lạc
 					cho chúng tôi:</p>
 				<hr>
-				<form name="formlh" onsubmit="return nguoidung()">
+				<form name="formlh" action="/user/order/confirm" method="post">
 					<table cellspacing="10px" style="display:flex;justify-content: center;">
 						<tbody >
 							<tr>
 								<td>Họ và tên</td>
 								<td><input type="text" name="ht" size="40" maxlength="40"
-									placeholder="Họ tên" autocomplete="off" required=""></td>
+									placeholder="Họ tên" autocomplete="off" required="" style="width:100%"></td>
 							</tr>
 							<tr>
 								<td>Điện thoại liên hệ</td>
 								<td><input type="text" name="sdt" size="40" maxlength="11"
-									minlength="10" placeholder="Điện thoại" required=""></td>
+									minlength="10" placeholder="Điện thoại" required="" style="width:100%"></td>
 							</tr>
 							
 							<tr>
-								<td>Tiêu đề</td>
-								<td><input type="text" name="tde" size="40" maxlength="100"
-									placeholder="Tiêu đề" required=""></td>
+								<td>Địa chỉ</td>
+								<td><textarea name="dc" rows="5" cols="42" maxlength="500"
+										wrap="physical" placeholder="Địa chỉ" required="" style="width:100%"></textarea></td>
 							</tr>
 							<tr>
-								<td>Nội dung</td>
-								<td><textarea name="nd" rows="5" cols="44" maxlength="500"
-										wrap="physical" placeholder="Nội dung liên hệ" required=""></textarea></td>
+								<td>Ghi chú</td>
+								<td><textarea name="nd" rows="5" cols="42" maxlength="500"
+										wrap="physical" placeholder="Nội dung liên hệ" required="" style="width:100%"></textarea></td>
 							</tr>
 							<tr>
+							<tr>
+								<td>Hình thức thanh toán</td>
+								<td><input type="radio" name="httt" value="1" checked="checked"> Thanh toán khi nhận hàng</td>
+							</tr>
 								<td></td>
 								<td><button type="submit" style="height: 40px;
-    width: 100%;">Gửi thông tin liên hệ để xác nhận đặt hàng đặt hàng</button></td>
+    	width: 100%;" onclick="redirectPage(`<c:url value='/user/order/confirm'/>`)">Gửi thông tin</button></td>
 							</tr>
 						</tbody>
 					</table>

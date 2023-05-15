@@ -19,4 +19,11 @@ public class CartServiceImpl implements CartService{
 		return cartReponsitory.findOne(idCart);
 	}
 
+	@Override
+	public Cart save(Cart cart) {
+		String idCart = "MGH" + (cartReponsitory.count() + 1);
+		cart.setId(idCart);
+		return cartReponsitory.save(cart);
+	}
+
 }

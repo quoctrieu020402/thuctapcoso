@@ -141,13 +141,11 @@ public class CartController {
 				
 				cardDetail.setQuantity(cardDetail.getQuantity() + 1);
 			}
-			
 		} else {
 			
 			if (0 < cardDetail.getQuantity()) {
 				
 				cardDetail.setQuantity(cardDetail.getQuantity() - 1);
-				
 			}
 			
 		}
@@ -161,33 +159,5 @@ public class CartController {
 		return mav;
 	}
 	
-	@GetMapping("cart/confirm")
-	public ModelAndView confirmBuyProducts() {
-		
-		ModelAndView mav = new ModelAndView("user/OrderSlip");
-		
-		Account account = accountService.getAccountById(SecurityUtils.getPrincipal().getUsername());
-		
-		int possitionCart = account.getUser().getListCart().size() - 1;
-		
-		String idCartOfUser = account.getUser().getListCart().get(possitionCart).getId();
-		
-		Cart cart = cartService.getCartById(idCartOfUser);
-		
-		List<CardDetail> listcart = cartDetailsService.getCartDetailsByIdCart(cart.getId());
-		
-		double sumMoney = 0;
-		
-		for (CardDetail cardDetail : listcart) {
-			sumMoney += cardDetail.getQuantity() * cardDetail.getProduct().getPrice();
-		}
-		
-		mav.addObject("date",java.time.LocalDate.now());
-		
-		mav.addObject("list", listcart);
-		
-		mav.addObject("sumMoney", String.format("%.3f", sumMoney));
-		
-		return mav;
-	}
+	
 }

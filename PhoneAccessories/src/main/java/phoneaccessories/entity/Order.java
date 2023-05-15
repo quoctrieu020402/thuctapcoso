@@ -33,6 +33,9 @@ public class Order {
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date date;
 	
+	@Column(name = "HOVATEN", length = 200)
+	private String fullName;
+	
 	@Column(name = "SODIENTHOAIKHACHHANG", length = 11)
 	private String phone;
 	
@@ -143,6 +146,14 @@ public class Order {
 
 	public void setPay(Pays pay) {
 		this.pay = pay;
+	}
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 	
 	

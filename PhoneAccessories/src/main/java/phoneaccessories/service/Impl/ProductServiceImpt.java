@@ -53,6 +53,12 @@ public class ProductServiceImpt implements ProductService{
 		return productRepository.findOne(id);
 	}
 
+	@Override
+	public void updateProduct(Product product) {
+		
+		productRepository.save(product);
+	}
+
 	
 
 }
