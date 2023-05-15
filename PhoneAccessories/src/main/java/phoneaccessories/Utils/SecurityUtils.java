@@ -3,6 +3,7 @@ package phoneaccessories.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
@@ -21,12 +22,9 @@ public class SecurityUtils {
 	}
 	
 	public static MyUser getPrincipal() {
-		
-		if (SecurityContextHolder.getContext().getAuthentication().getPrincipal() != null ){
-			MyUser myUser = (MyUser) (SecurityContextHolder.getContext()).getAuthentication().getPrincipal();
-			return myUser;
-		}
 
-        return null;
+		MyUser myUser = (MyUser) (SecurityContextHolder.getContext()).getAuthentication().getPrincipal();
+		
+        return myUser;
     }
 }

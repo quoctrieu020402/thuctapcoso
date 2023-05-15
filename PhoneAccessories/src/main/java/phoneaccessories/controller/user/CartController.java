@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,14 +43,17 @@ public class CartController {
 
 
 	@GetMapping("cart")
-	public ModelAndView showCart(HttpServletRequest request,HttpServletResponse response) throws IOException {
+	public ModelAndView showCart() throws IOException {
 		
 		ModelAndView mav = new ModelAndView("user/cart");
 		
 		Account account = null;;
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication.getName().equals("anonymousUser") ) {
+			mav.setViewName("redirect:/login");
+			return mav;
 
-		if ((SecurityContextHolder.getContext()).getAuthentication().getPrincipal() != null) {
-			response.sendRedirect("/login");
 		} else {
 			account = accountService.getAccountById(SecurityUtils.getPrincipal().getUsername());
 		}
@@ -172,8 +176,6 @@ public class CartController {
 		double sumMoney = 0;
 		
 		mav.addObject("sumMoney", sumMoney);
-		
-		
 		
 		return mav;
 	}

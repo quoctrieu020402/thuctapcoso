@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="/templates/user/css/home_products.css">
 <link rel="stylesheet" href="/templates/user/css/pagination_phantrang.css">
 <link rel="stylesheet" href="/templates/user/css/footer.css">
+<link rel="stylesheet" href="/templates/user/css/chitietsanpham.css">
 
 
 </head>
