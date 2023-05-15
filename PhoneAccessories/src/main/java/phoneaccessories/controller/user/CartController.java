@@ -138,6 +138,7 @@ public class CartController {
 		if (url.contains("add")){
 			
 			if (cardDetail.getProduct().getNumber() > cardDetail.getQuantity()) {
+				
 				cardDetail.setQuantity(cardDetail.getQuantity() + 1);
 			}
 			
@@ -163,7 +164,7 @@ public class CartController {
 	@GetMapping("cart/confirm")
 	public ModelAndView confirmBuyProducts() {
 		
-		ModelAndView mav = new ModelAndView("user/bill");
+		ModelAndView mav = new ModelAndView("user/OrderSlip");
 		
 		Account account = accountService.getAccountById(SecurityUtils.getPrincipal().getUsername());
 		
@@ -173,9 +174,19 @@ public class CartController {
 		
 		Cart cart = cartService.getCartById(idCartOfUser);
 		
+		List<CardDetail> listcart = cartDetailsService.getCartDetailsByIdCart(cart.getId());
+		
 		double sumMoney = 0;
 		
-		mav.addObject("sumMoney", sumMoney);
+		for (CardDetail cardDetail : listcart) {
+			sumMoney += cardDetail.getQuantity() * cardDetail.getProduct().getPrice();
+		}
+		
+		mav.addObject("date",java.time.LocalDate.now());
+		
+		mav.addObject("list", listcart);
+		
+		mav.addObject("sumMoney", String.format("%.3f", sumMoney));
 		
 		return mav;
 	}
