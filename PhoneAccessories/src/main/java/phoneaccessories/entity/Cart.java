@@ -31,7 +31,7 @@ public class Cart {
 	private List<CardDetail> listCardDetail;
 	
 	public Cart() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public String getId() {

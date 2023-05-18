@@ -17,7 +17,7 @@ public class Account {
 	@Column(name = "TENTAIKHOANG",length= 50)
 	private String username;
 	
-	@Column(name = "MATKHAU",length= 50)
+	@Column(name = "MATKHAU",length= 100)
 	private String pasword;
 	
 	@Column(name = "TRANGTHAI")

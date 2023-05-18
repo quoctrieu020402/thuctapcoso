@@ -22,7 +22,7 @@ public class StatusOrder {
 	private Order order;
 	
 	public StatusOrder() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public int getId() {

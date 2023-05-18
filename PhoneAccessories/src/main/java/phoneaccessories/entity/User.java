@@ -1,8 +1,10 @@
 package phoneaccessories.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -41,14 +43,14 @@ public class User {
 	@JoinColumn(name = "TENTAIKHOANG")
 	private Account account;
 	
-	@OneToMany(mappedBy = "user")
-	private List<Order> listOther;
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Order> listOther = new ArrayList<Order>();
 	
 	@OneToMany(mappedBy = "user")
 	private List<Cart> listCart;
 	
 	public User() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public String getId() {

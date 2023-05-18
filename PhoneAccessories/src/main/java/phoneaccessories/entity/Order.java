@@ -45,15 +45,15 @@ public class Order {
 	@Column(name = "DIACHI", length = 500)
 	private String address;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "MANV")
 	private Staffs staff;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name ="MAKHACHHANG")
 	private User user;
 	
-	@OneToMany(mappedBy = "order",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "order",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<StatusOrder> listStatusOrder;
 	
 	@OneToOne
@@ -64,6 +64,10 @@ public class Order {
 	@JoinColumn(name = "MAGIOHANG")
 	private Cart cart;
 	
+	public Order() {
+		super();
+	}
+
 	public Cart getCart() {
 		return cart;
 	}
@@ -72,9 +76,6 @@ public class Order {
 		this.cart = cart;
 	}
 
-	public Order() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public Long getId() {
 		return id;

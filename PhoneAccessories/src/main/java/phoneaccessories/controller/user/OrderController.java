@@ -104,27 +104,22 @@ public class OrderController {
 		Pays pay = payService.getPayById(idPay);
 		order.setPay(pay);
 		order.setUser(account.getUser());
-		order = orderService.save(order);
+		orderService.save(order);
 		
-		List<Order> orders = account.getUser().getListOther();
-		
-		List<Cart> carts = account.getUser().getListCart();
-		
-		orders.add(order);
-		
-		account.getUser().setListOther(orders);
+//		account.getUser().getListOther().add(order);
 		
 		Cart newCart = new Cart();
 		
 		newCart.setUser(account.getUser());
 		
-		newCart =  cartService.save(newCart);
+		newCart =cartService.save(newCart);
+//		
+//		account.getUser().getListCart().add(newCart);
+//		
+//		userService.update(account.getUser());
 		
-		carts.add(newCart);
-		account.getUser().setListCart(carts);
-		
-		userService.update(account.getUser());
-		
+
+	
 		List<CardDetail> listcart = cartDetailsService.getCartDetailsByIdCart(cart.getId());
 		
 		for (CardDetail cardDetail : listcart) {
@@ -133,7 +128,8 @@ public class OrderController {
 			int quantity = product.getNumber() - cardDetail.getQuantity();
 			
 			product.setNumber(quantity);
-
+			
+			productService.updateProduct(product);
 		}
 		
 		return mav;
