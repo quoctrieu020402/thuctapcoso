@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="/templates/user/css/pagination_phantrang.css">
 <link rel="stylesheet" href="/templates/user/css/footer.css">
 <link rel="stylesheet" href="/templates/user/css/chitietsanpham.css">
-
+<link rel="stylesheet" href="/templates/user/css/nguoidung.css">
 
 </head>
 <body>
@@ -33,12 +33,15 @@
 	<section>
 		<%@ include file="/common/user/header.jsp"%>
 		
+	
 		<%@ include file="/common/user/banner.jsp"%>
+		
+		
 		
 		<dec:body></dec:body>
 	</section>
 	
-	<%@ include file="/common/admin/footer.jsp"%>
+	
 	
 	<script src="/templates/user/js/redirect.js"></script>
 </body>

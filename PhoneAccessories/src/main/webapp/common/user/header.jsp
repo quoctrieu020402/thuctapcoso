@@ -25,13 +25,22 @@
 
             <div class="tools-member">
                 <div class="member">
-                    <a href="/login">
+                <security:authorize access = "isAnonymous()">
+					 <a href="/login">
+                        <i class="fa fa-user"></i>Tài khoản
+                    </a>
+				</security:authorize>
+				<security:authorize access = "isAuthenticated()">
+					 <a href="/user/profile">
                         <i class="fa fa-user"></i>Tài khoản
                     </a>
                     <div class="menuMember hide">
                         <a href="nguoidung.html">Trang người dùng</a>
                         <a onclick="if(window.confirm('Xác nhận đăng xuất ?')) logOut();">Đăng xuất</a>
                     </div>
+				</security:authorize>
+                
+                   
 
                 </div> <!-- End Member -->
 
