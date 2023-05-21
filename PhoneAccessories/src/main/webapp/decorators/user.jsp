@@ -33,16 +33,11 @@
 	<section>
 		<%@ include file="/common/user/header.jsp"%>
 		
-<<<<<<< HEAD
-<%-- 		<%@ include file="/common/user/banner.jsp"%>
- --%>		
-=======
+
 	
 		<%@ include file="/common/user/banner.jsp"%>
 		
 		
-		
->>>>>>> branch 'main' of https://github.com/quoctrieu020402/thuctapcoso.git
 		<dec:body></dec:body>
 	</section>
 	
