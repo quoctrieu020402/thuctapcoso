@@ -31,29 +31,6 @@
 						</a>
 					</div>
 				</div>
-				<div class="owl-item cloned"
-					style="width: 770px; margin-right: 100px;">
-					<div class="item">
-						<a target="_blank" href="img/banners/banner8.png"> <img
-							src="/templates/user/img/banners/banner8.png">
-						</a>
-					</div>
-				</div>
-				<div class="owl-item cloned"
-					style="width: 770px; margin-right: 100px;">
-					<div class="item">
-						<a target="_blank" href="img/banners/banner9.png"> <img
-							src="/templates/user/img/banners/banner9.png">
-						</a>
-					</div>
-				</div>
-				<div class="owl-item" style="width: 770px; margin-right: 100px;">
-					<div class="item">
-						<a target="_blank" href="img/banners/banner0.gif"> <img
-							src="/templates/user/img/banners/banner0.gif">
-						</a>
-					</div>
-				</div>
 				<div class="owl-item" style="width: 770px; margin-right: 100px;">
 					<div class="item">
 						<a target="_blank" href="img/banners/banner1.png"> <img
@@ -104,29 +81,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="owl-item active"
-					style="width: 770px; margin-right: 100px;">
-					<div class="item">
-						<a target="_blank" href="img/banners/banner8.png"> <img
-							src="/templates/user/img/banners/banner8.png">
-						</a>
-					</div>
-				</div>
-				<div class="owl-item" style="width: 770px; margin-right: 100px;">
-					<div class="item">
-						<a target="_blank" href="img/banners/banner9.png"> <img
-							src="/templates/user/img/banners/banner9.png">
-						</a>
-					</div>
-				</div>
-				<div class="owl-item cloned"
-					style="width: 770px; margin-right: 100px;">
-					<div class="item">
-						<a target="_blank" href="img/banners/banner0.gif"> <img
-							src="/templates/user/img/banners/banner0.gif">
-						</a>
-					</div>
-				</div>
+				
 				<div class="owl-item cloned"
 					style="width: 770px; margin-right: 100px;">
 					<div class="item">

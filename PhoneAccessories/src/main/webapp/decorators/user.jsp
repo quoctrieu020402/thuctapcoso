@@ -33,8 +33,8 @@
 	<section>
 		<%@ include file="/common/user/header.jsp"%>
 		
-		<%@ include file="/common/user/banner.jsp"%>
-		
+<%-- 		<%@ include file="/common/user/banner.jsp"%>
+ --%>		
 		<dec:body></dec:body>
 	</section>
 	
