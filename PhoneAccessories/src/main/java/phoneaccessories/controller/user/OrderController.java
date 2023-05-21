@@ -118,8 +118,6 @@ public class OrderController {
 //		
 //		userService.update(account.getUser());
 		
-
-	
 		List<CardDetail> listcart = cartDetailsService.getCartDetailsByIdCart(cart.getId());
 		
 		for (CardDetail cardDetail : listcart) {
