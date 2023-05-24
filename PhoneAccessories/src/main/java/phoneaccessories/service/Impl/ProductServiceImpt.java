@@ -59,6 +59,18 @@ public class ProductServiceImpt implements ProductService{
 		productRepository.save(product);
 	}
 
-	
+	@Override
+    public List<Product> getRelatedProducts(Product product) {
+        // Triển khai logic để lấy danh sách sản phẩm gợi ý
+        // Ví dụ: Lấy các sản phẩm có cùng danh mục với sản phẩm hiện tại
+        return productRepository.findByCategory(product.getCategory());
+    }
 
+	@Override
+	public List<Product> searchByName(String keyword) {
+	    return productRepository.findByNameContaining(keyword);
+	}
+
+
+	
 }

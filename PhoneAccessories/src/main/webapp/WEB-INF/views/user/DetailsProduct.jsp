@@ -3,7 +3,7 @@
 <%@ include file="/common/taglib.jsp"%>
 
 <div class="chitietSanpham" style="margin-bottom: 100px">
-	<h1>Điện thoại Xiaomi Redmi Note 5</h1>
+	<h1>${product.name}</h1>
 	<div class="rating">
 		<i class="fa fa-star"></i><i class="fa fa-star"></i><i
 			class="fa fa-star"></i><i class="fa fa-star"></i><i
@@ -11,13 +11,12 @@
 	</div>
 	<div class="rowdetail group">
 		<div class="picture">
-			<img src="img/products/xiaomi-redmi-note-5-pro-600x600.jpg"
-				onclick="opencertain()">
+			<img src="${product.image}" onclick="opencertain()">
 		</div>
 		<div class="price_sale">
 			<div class="area_price">
-				<strong>5.690.000₫</strong><label class="moiramat"> Mới ra
-					mắt </label>
+				<strong>${product.price}</strong><label class="moiramat">
+					Mới ra mắt </label>
 			</div>
 			<div class="ship" style="display: none;">
 				<img src="img/chitietsanpham/clock-152067_960_720.png">
@@ -103,9 +102,7 @@
 			<img id="bigimg" class="bigimg"
 				src="img/products/xiaomi-redmi-note-5-pro-600x600.jpg">
 			<div class="div_smallimg owl-carousel owl-loaded owl-drag">
-				<!-- <img src="img/chitietsanpham/oppo-f9-mau-do-1-org.jpg" onclick="changepic(this.src)">
-                        <img src="img/chitietsanpham/oppo-f9-mau-do-2-org.jpg" onclick="changepic(this.src)">
-                        <img src="img/chitietsanpham/oppo-f9-mau-do-3-org.jpg" onclick="changepic(this.src)"> -->
+
 				<div class="owl-stage-outer">
 					<div class="owl-stage"
 						style="transition: all 0s ease 0s; width: 2135px; transform: translate3d(610px, 0px, 0px);">
@@ -205,206 +202,29 @@
 			style="background-image: linear-gradient(120deg, #434aa8 0%, #ec1f1f 50%, #434aa8 100%);">*
 			Bạn có thể thích *</h3>
 		<div class="listSpTrongKhung flexContain">
-			<li class="sanPham"><a
-				href="chitietsanpham.html?Xiaomi-Redmi-5-Plus-4GB"> <img
-					src="img/products/xiaomi-redmi-5-plus-600x600.jpg" alt="">
-					<h3>Xiaomi Redmi 5 Plus 4GB</h3>
-					<div class="price">
-						<strong>4.790.000₫</strong>
-					</div>
-					<div class="ratingresult">
-						<i class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star-o"></i><span>347 đánh giá</span>
-					</div>
+			<c:forEach items="${suggestedProducts}" var="suggestedProduct">
+				<li class="sanPham"><a
+					href="/product/${product.id}"> <img
+						src="${suggestedProduct.image }" alt="">
+						<h3>${suggestedProduct.name }</h3>
+						<div class="price">
+							<strong>${suggestedProduct.price }</strong>
+						</div>
+						<div class="ratingresult">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i
+								class="fa fa-star"></i><i class="fa fa-star"></i><i
+								class="fa fa-star-o"></i><span>347 đánh giá</span>
+						</div>
 
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('Xia3', 'Xiaomi Redmi 5 Plus 4GB'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
-			<li class="sanPham"><a
-				href="chitietsanpham.html?Realme-2-Pro-4GB/64GB"> <img
-					src="https://cdn.tgdd.vn/Products/Images/42/193464/realme-2-pro-4gb-64gb-blue-600x600.jpg"
-					alt="">
-					<h3>Realme 2 Pro 4GB/64GB</h3>
-					<div class="price">
-						<strong>5.590.000₫</strong>
-					</div>
-					<div class="ratingresult">
-						<i class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star-o"></i><span>11 đánh giá</span>
-					</div> <label class="moiramat"> Mới ra mắt </label>
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('Rea3', 'Realme 2 Pro 4GB/64GB'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
-			<li class="sanPham"><a href="chitietsanpham.html?Nokia-5.1-Plus">
-					<img src="img/products/nokia-51-plus-black-18thangbh-400x400.jpg"
-					alt="">
-					<h3>Nokia 5.1 Plus</h3>
-					<div class="price">
-						<strong>4.790.000₫</strong>
-					</div>
-					<div class="ratingresult">
-						<i class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star"></i><span>7 đánh giá</span>
-					</div> <label class="giamgia"> <i class="fa fa-bolt"></i> Giảm
-						250.000₫
-				</label>
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('Nok0', 'Nokia 5.1 Plus'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
-			<li class="sanPham"><a href="chitietsanpham.html?Vivo-Y85">
-					<img
-					src="https://cdn.tgdd.vn/Products/Images/42/156205/vivo-y85-red-docquyen-600x600.jpg"
-					alt="">
-					<h3>Vivo Y85</h3>
-					<div class="price">
-						<strong>4.990.000₫</strong>
-					</div>
-					<div class="ratingresult">
-						<i class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star-o"></i><span>60 đánh giá</span>
-					</div> <label class="giamgia"> <i class="fa fa-bolt"></i> Giảm
-						500.000₫
-				</label>
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('Viv2', 'Vivo Y85'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
-			<li class="sanPham"><a href="chitietsanpham.html?HTC-U12-life">
-					<img
-					src="https://cdn.tgdd.vn/Products/Images/42/186397/htc-u12-life-1-600x600.jpg"
-					alt="">
-					<h3>HTC U12 life</h3>
-					<div class="price">
-						<strong>7.690.000₫</strong>
-					</div>
-					<div class="ratingresult">
-						<i class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star-o"></i><span>12 đánh giá</span>
-					</div> <label class="moiramat"> Mới ra mắt </label>
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('HTC0', 'HTC U12 life'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
-			<li class="sanPham"><a
-				href="chitietsanpham.html?Samsung-Galaxy-J8"> <img
-					src="img/products/samsung-galaxy-j8-600x600-600x600.jpg" alt="">
-					<h3>Samsung Galaxy J8</h3>
-					<div class="price">
-						<strong>6.290.000₫</strong>
-					</div>
-					<div class="ratingresult"></div> <label class="giamgia"> <i
-						class="fa fa-bolt"></i> Giảm 500.000₫
-				</label>
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('Sam2', 'Samsung Galaxy J8'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
-			<li class="sanPham"><a
-				href="chitietsanpham.html?Xiaomi-Mi-8-Lite"> <img
-					src="img/products/xiaomi-mi-8-lite-black-1-600x600.jpg" alt="">
-					<h3>Xiaomi Mi 8 Lite</h3>
-					<div class="price">
-						<strong>6.690.000₫</strong>
-					</div>
-					<div class="ratingresult"></div> <label class="tragop"> Trả
-						góp 0% </label>
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('Xia0', 'Xiaomi Mi 8 Lite'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
-			<li class="sanPham"><a href="chitietsanpham.html?Xiaomi-Mi-8">
-					<img src="img/products/xiaomi-mi-8-1-600x600.jpg" alt="">
-					<h3>Xiaomi Mi 8</h3>
-					<div class="price">
-						<strong>12.990.000₫</strong>
-					</div>
-					<div class="ratingresult"></div>
-
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('Xia1', 'Xiaomi Mi 8'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
-			<li class="sanPham"><a
-				href="chitietsanpham.html?Realme-2-4GB/64GB"> <img
-					src="https://cdn.tgdd.vn/Products/Images/42/193462/realme-2-4gb-64gb-docquyen-600x600.jpg"
-					alt="">
-					<h3>Realme 2 4GB/64GB</h3>
-					<div class="price">
-						<strong>4.490.000₫</strong>
-					</div>
-					<div class="ratingresult">
-						<i class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star"></i><span>7 đánh giá</span>
-					</div> <label class="moiramat"> Mới ra mắt </label>
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('Rea1', 'Realme 2 4GB/64GB'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
-			<li class="sanPham"><a
-				href="chitietsanpham.html?Mobiistar-Zumbo-S2-Dual"> <img
-					src="img/products/mobiistar-zumbo-s2-dual-300x300.jpg" alt="">
-					<h3>Mobiistar Zumbo S2 Dual</h3>
-					<div class="price">
-						<strong>2.850.000₫</strong>
-					</div>
-					<div class="ratingresult">
-						<i class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star"></i><i class="fa fa-star"></i><i
-							class="fa fa-star-o"></i><span>104 đánh giá</span>
-					</div> <label class="moiramat"> Mới ra mắt </label>
-					<div class="tooltip">
-						<button class="themvaogio"
-							onclick="themVaoGioHang('Mob1', 'Mobiistar Zumbo S2 Dual'); return false;">
-							<span class="tooltiptext" style="font-size: 15px;">Thêm
-								vào giỏ</span> +
-						</button>
-					</div>
-			</a></li>
+						<div class="tooltip">
+							<button class="themvaogio"
+								onclick="themVaoGioHang('Xia3', 'Xiaomi Redmi 5 Plus 4GB'); return false;">
+								<span class="tooltiptext" style="font-size: 15px;">Thêm
+									vào giỏ</span> +
+							</button>
+						</div>
+				</a></li>
+				</c:forEach>
 		</div>
 	</div>
 </div>

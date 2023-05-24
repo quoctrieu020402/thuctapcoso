@@ -155,3 +155,25 @@
 	background-color: #ccc;
 	color: #000;
 }
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 320px; /* Điều chỉnh kích thước theo ý muốn */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  
+}
+
+.slide.active {
+  opacity: 1;
+}

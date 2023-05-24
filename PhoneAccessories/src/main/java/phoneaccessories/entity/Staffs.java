@@ -17,48 +17,57 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name ="NHANVIEN")
+@Table(name = "NHANVIEN")
 public class Staffs {
 	@Id
-	@Column(name = "MANV" , length = 10)
+	@Column(name = "MANV", length = 10)
 	private String id;
-	
-	@Column(name = "HO",length = 30)
+
+	@Column(name = "HO", length = 30)
 	private String surname;
-	
-	@Column(name = "TEN",length = 30)
+
+	@Column(name = "TEN", length = 30)
 	private String name;
-	
-	@Column(name = "CMND",length = 12)
+
+	@Column(name = "CMND", length = 12)
 	private String cmnd;
-	
-	@Column(name = "DIACHI",length = 30)
+
+	@Column(name = "DIACHI", length = 30)
 	private String address;
-	
-	@Column(name = "GIOITINH",length = 10)
+
+	@Column(name = "GIOITINH", length = 10)
 	private String gender;
-	
-	@Column(name = "SDT",length = 11)
+
+	@Column(name = "SDT", length = 11)
 	private String sdt;
-	
-	@Column(name = "ANH",length = 50)
+
+	@Column(name = "ANH", length = 50)
 	private String image;
-	
-	@Column(name = "NGAYSINH",length = 30)
+
+	@Column(name = "NGAYSINH", length = 30)
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date dateOfBirth;
-	
+
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "TENTAIKHOANG")
 	private Account account;
-	
+
 	@OneToMany(mappedBy = "staff")
 	private List<Receipt> listReceipt;
-	
+
 	@OneToMany(mappedBy = "staff")
 	private List<Order> listOrder;
+
+	@OneToMany(mappedBy = "nvTra")
+	private List<Warranty> listNVTra;
+
+	@OneToMany(mappedBy = "nvNhan")
+	private List<Warranty> listNVNhan;
 	
+	@OneToMany(mappedBy = "staff")
+	private List<paySlip> listPaySlip;
+
 	public Staffs() {
 		// TODO Auto-generated constructor stub
 	}
@@ -158,6 +167,5 @@ public class Staffs {
 	public void setListOrder(List<Order> listOrder) {
 		this.listOrder = listOrder;
 	}
-	
-	
+
 }

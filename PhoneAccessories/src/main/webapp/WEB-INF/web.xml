@@ -25,9 +25,9 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-            /WEB-INF/context/dispatcher-servlet.xml
-      
-            </param-value>
+				/WEB-INF/context/dispatcher-servlet.xml
+
+			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -35,7 +35,7 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- Declare Spring Security Filter -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
@@ -60,16 +60,16 @@
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
-	
+
 
 	<session-config>
 		<tracking-mode>COOKIE</tracking-mode>
 	</session-config>
 
 
-
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
+
 	</welcome-file-list>
 
 </web-app>
