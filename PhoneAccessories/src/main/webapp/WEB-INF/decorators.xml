@@ -4,7 +4,7 @@
 <decorators defaultdir="/decorators">
 	
     <decorator name="web" page="user.jsp">
-       <pattern>/*</pattern>
+       <pattern>/user*</pattern>
     </decorator>
    
     <decorator name="admin-home" page="admin.jsp">

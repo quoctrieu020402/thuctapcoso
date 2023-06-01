@@ -14,7 +14,7 @@
 	<div class="content">
 		<div class="search-header"
 			style="position: relative; left: 162px; top: 1px;">
-			<form class="input-search" method="get" action="/search">
+			<form class="input-search" method="get" action="/user/search">
 				<div class="autocomplete">
 					<input id="search-box" name="keyword" autocomplete="off" type="text"
 						placeholder="Nhập từ khóa tìm kiếm...">

@@ -69,4 +69,23 @@ public class UserSeviceImpl implements UserService{
 		userRepository.save(user);
 	}
 
+	
+	@Override
+	public void updateUser(User updateUser) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+	@Override
+	public User getUserByAccount(String account) {
+		// TODO Auto-generated method stub
+		return userRepository.findByAccount(account);
+	}
+
+	
+
+	
+
 }

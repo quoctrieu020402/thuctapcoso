@@ -8,4 +8,6 @@ import phoneaccessories.entity.Category;
 
 public interface CategoryRepository extends JpaRepository<Category, String>{
 	List<Category> findByStatus(boolean b);
+
+	Category findById(String id);
 }

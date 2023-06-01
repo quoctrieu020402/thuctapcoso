@@ -41,6 +41,10 @@ public class Product {
 	@JoinColumn(name = "MADANHMUC")
 	private Category category;
 	
+	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@JoinColumn(name = "COMPANY")
+	private Category company;
+	
 	@OneToMany(mappedBy = "product",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<ReceiptDetail> listReceiptDetail;
 	

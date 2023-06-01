@@ -48,7 +48,7 @@
 			</div>
 			<div class="area_order">
 				<!-- nameProduct là biến toàn cục được khởi tạo giá trị trong phanTich_URL_chiTietSanPham -->
-				<a class="buy_now" onclick="themVaoGioHang(maProduct, nameProduct);">
+				<a class="buy_now" href="<c:url value='/user/cart/${product.id}'/>">
 					<b><i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng</b>
 					<p>Giao trong 1 giờ hoặc nhận tại cửa hàng</p>
 				</a>
@@ -204,7 +204,7 @@
 		<div class="listSpTrongKhung flexContain">
 			<c:forEach items="${suggestedProducts}" var="suggestedProduct">
 				<li class="sanPham"><a
-					href="/product/${product.id}"> <img
+					href="/user/product_detail?id=${product.id }"> <img
 						src="${suggestedProduct.image }" alt="">
 						<h3>${suggestedProduct.name }</h3>
 						<div class="price">
@@ -217,6 +217,7 @@
 						</div>
 
 						<div class="tooltip">
+						
 							<button class="themvaogio"
 								onclick="themVaoGioHang('Xia3', 'Xiaomi Redmi 5 Plus 4GB'); return false;">
 								<span class="tooltiptext" style="font-size: 15px;">Thêm

@@ -62,24 +62,24 @@
 						<tbody >
 							<tr>
 								<td>Họ và tên</td>
-								<td><input type="text" name="ht" size="40" maxlength="40"
+								<td><input type="text" name="ht" size="40" maxlength="40" value = "${user.surname } ${user.name}"
 									placeholder="Họ tên" autocomplete="off" required="" style="width:100%"></td>
 							</tr>
 							<tr>
 								<td>Điện thoại liên hệ</td>
-								<td><input type="text" name="sdt" size="40" maxlength="11"
+								<td><input type="text" name="sdt" size="40" maxlength="11" value = "${user.sdt}"
 									minlength="10" placeholder="Điện thoại" required="" style="width:100%"></td>
 							</tr>
 							
 							<tr>
 								<td>Địa chỉ</td>
 								<td><textarea name="dc" rows="5" cols="42" maxlength="500"
-										wrap="physical" placeholder="Địa chỉ" required="" style="width:100%"></textarea></td>
+										wrap="physical" placeholder="Địa chỉ" required="" style="width:100%">${user.address}</textarea></td>
 							</tr>
 							<tr>
 								<td>Ghi chú</td>
 								<td><textarea name="nd" rows="5" cols="42" maxlength="500"
-										wrap="physical" placeholder="Nội dung liên hệ" required="" style="width:100%"></textarea></td>
+										wrap="physical" placeholder="Nội dung liên hệ"  style="width:100%"></textarea></td>
 							</tr>
 							<tr>
 							<tr>
@@ -88,7 +88,7 @@
 							</tr>
 								<td></td>
 								<td><button type="submit" style="height: 40px;
-    	width: 100%;" onclick="redirectPage(`<c:url value='/user/order/confirm'/>`)">Gửi thông tin</button></td>
+    	width: 100%;" >Gửi thông tin</button></td>
 							</tr>
 						</tbody>
 					</table>

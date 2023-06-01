@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -18,11 +17,13 @@ import org.springframework.web.servlet.ModelAndView;
 import phoneaccessories.Utils.SecurityUtils;
 import phoneaccessories.entity.Account;
 import phoneaccessories.entity.CardDetail;
+import phoneaccessories.entity.CardDetailPk;
 import phoneaccessories.entity.Cart;
-import phoneaccessories.repository.AccountRepository;
+import phoneaccessories.entity.Product;
 import phoneaccessories.service.AccountService;
 import phoneaccessories.service.CartDetailsService;
 import phoneaccessories.service.CartService;
+import phoneaccessories.service.ProductService;
 import phoneaccessories.service.UserService;
 
 @Controller
@@ -41,7 +42,8 @@ public class CartController {
 	@Autowired
 	private UserService userService;
 
-
+	@Autowired
+	private ProductService productService;
 	@GetMapping("cart")
 	public ModelAndView showCart() throws IOException {
 		
@@ -67,6 +69,7 @@ public class CartController {
 		String idCart = account.getUser().getListCart().get(possitionCart).getId();
 		
 		Cart cart = cartService.getCartById(idCart);
+		
 
 		List<CardDetail> listcart = cartDetailsService.getCartDetailsByIdCart(cart.getId());
 		
@@ -159,5 +162,50 @@ public class CartController {
 		return mav;
 	}
 	
-	
+	@GetMapping("cart/{idProduct}")
+	public ModelAndView addProductIntoCart(@PathVariable(name = "idProduct") String idProduct) throws IOException {
+
+		ModelAndView mav = new ModelAndView("user/cart");
+
+		Account account = null;
+		;
+
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication.getName().equals("anonymousUser")) {
+			mav.setViewName("redirect:/login");
+			return mav;
+
+		} else {
+			account = accountService.getAccountById(SecurityUtils.getPrincipal().getUsername());
+		}
+
+		if (account.getUser() == null) {
+			userService.save(account);
+		}
+
+		int possitionCart = account.getUser().getListCart().size() - 1;
+
+		String idCart = account.getUser().getListCart().get(possitionCart).getId();
+
+		Cart cart = cartService.getCartById(idCart);
+		
+		Product product = productService.getProductById(idProduct);
+		
+		CardDetail cardDetail = new CardDetail();
+		CardDetailPk cardDetailPk = new CardDetailPk(idProduct, idCart);
+		cardDetail.setId(cardDetailPk);
+		
+		cardDetail.setCard(cart);
+		cardDetail.setProduct(product);
+		cardDetail.setQuantity(1);
+		
+		cartDetailsService.updateCartDetails(cardDetail);
+		
+
+		List<CardDetail> listcart = cartDetailsService.getCartDetailsByIdCart(cart.getId());
+
+		mav.addObject("ListProduct", listcart);
+
+		return mav;
+	}
 }

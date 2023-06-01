@@ -3,6 +3,8 @@ package phoneaccessories.service.Impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import phoneaccessories.entity.Category;
@@ -71,6 +73,53 @@ public class ProductServiceImpt implements ProductService{
 	    return productRepository.findByNameContaining(keyword);
 	}
 
+	@Override
+	public List<Product> getProductByCategoryId(String id) {
+		// TODO Auto-generated method stub
+		Category category = categoryRepository.findById(id);
+        return category.getProducts();
+	}
+
+	@Override
+	public List<Product> filterByPriceRange(double price1, double price2) {
+		// TODO Auto-generated method stub
+		return productRepository.findByPriceBetween(price1, price2);
+	}
+
+	@Override
+	public List<Product> filterByPrice(double price) {
+		// TODO Auto-generated method stub
+		return productRepository.findByPriceLessThan(price);
+	}
+
+	@Override
+	public List<Product> getProductsOrderByPriceAsc() {
+		// TODO Auto-generated method stub
+		return productRepository.findAllByOrderByPriceAsc();
+	}
+
+	@Override
+	public List<Product> getProductsOrderByPriceDesc() {
+		// TODO Auto-generated method stub
+		return productRepository.findAllByOrderByPriceDesc();
+	}
+
+	@Override
+	public List<Product> getProductsOrderByNameAsc() {
+		// TODO Auto-generated method stub
+		return productRepository.findAllByOrderByNameAsc();
+	}
+
+	@Override
+	public List<Product> getProductsOrderByNameDesc() {
+		// TODO Auto-generated method stub
+		return productRepository.findAllByOrderByNameDesc();
+	}
+	@Override
+	public Page<Product> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return productRepository.findAll(pageable);
+	}
 
 	
 }

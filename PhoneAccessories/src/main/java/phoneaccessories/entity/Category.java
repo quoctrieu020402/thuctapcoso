@@ -2,10 +2,8 @@ package phoneaccessories.entity;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,6 +20,9 @@ public class Category {
 	
 	@Column(name ="TRANGTHAI")
 	private boolean status;
+	
+	@Column(name ="HINHANH")
+	private String image;
 	
 	@OneToMany(mappedBy = "category")
 	private List<Product> listProduct;
@@ -61,6 +62,11 @@ public class Category {
 
 	public void setListProduct(List<Product> listProduct) {
 		this.listProduct = listProduct;
+	}
+
+	public List<Product> getProducts() {
+		// TODO Auto-generated method stub
+		return listProduct;
 	}
 
 	

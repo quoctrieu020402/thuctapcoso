@@ -2,6 +2,9 @@ package phoneaccessories.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import phoneaccessories.entity.Product;
 
 public interface ProductService {
@@ -12,5 +15,13 @@ public interface ProductService {
 	void updateProduct(Product product);
 	List<Product> getRelatedProducts(Product product);
 	List<Product> searchByName(String keyword);
+	List<Product> getProductByCategoryId(String id);
+	List<Product> filterByPriceRange(double price1, double price2);
+	List<Product> filterByPrice(double price);
+	List<Product> getProductsOrderByPriceAsc();
+	List<Product> getProductsOrderByPriceDesc();
+	List<Product> getProductsOrderByNameAsc();
+	List<Product> getProductsOrderByNameDesc();
+	Page<Product> findAll(Pageable pageable);
 
 }
