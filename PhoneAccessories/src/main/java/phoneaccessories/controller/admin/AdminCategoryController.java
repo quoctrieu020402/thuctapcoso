@@ -27,7 +27,7 @@ public class AdminCategoryController {
 		ModelAndView mav = new ModelAndView("admin/category/list-category");
 
 		List<Category> listCategory = new ArrayList<>();
-
+		//a
 		listCategory = categoryImpl.getListCategoryByStatus(true);
 
 		mav.addObject("listCategory", listCategory);
