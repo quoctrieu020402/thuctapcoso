@@ -37,6 +37,21 @@ public class AccountServiceImpl implements AccountService{
 		
 		account.setPasword(bCryptPasswordEncoder.encode(account.getPasword()));
 		
+		Position position = reponsitory.findOne("user");
+		
+		if(position == null) {
+			position = new Position();
+			position.setId("user");
+			position.setName("USER");
+			reponsitory.save(position);
+			
+		}
+		
+		
+		
+		
+		account.setPosition(position);
+		
 		accountRpst.save(account);
 		
 		
