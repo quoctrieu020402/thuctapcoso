@@ -42,8 +42,12 @@ public class Product {
 	private Category category;
 	
 	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	@JoinColumn(name = "COMPANY")
-	private Category company;
+	@JoinColumn(name = "MADONGMAY")
+	private MachineSeries  machineSeries;
+	
+	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@JoinColumn(name = "MACAUHINH")
+	private Config config;
 	
 	@OneToMany(mappedBy = "product",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<ReceiptDetail> listReceiptDetail;

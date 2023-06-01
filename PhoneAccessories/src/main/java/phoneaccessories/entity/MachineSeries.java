@@ -9,13 +9,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "COMPANY")
-public class Company {
+@Table (name = "DONGMAY")
+public class MachineSeries {
 @Id
-@Column(name = "MACONGTY")
+@Column(name = "MADONGMAY")
 private String id;
 
-@Column(name ="TENCONGTY")
+@Column(name ="TENDONGMAY")
 private String name;
 
 @Column(name ="TRANGTHAI")
@@ -23,9 +23,9 @@ private boolean status;
 
 @Column(name = "LOGO")
 private String logo;
-}
 
-@OneToMany(mappedBy = "company")
+
+@OneToMany(mappedBy = "machineSeries")
 private List<Product> listProduct;
 
 public String getId() {
