@@ -25,7 +25,7 @@
 						giỏ hàng trống
 					</h1> 
 				</td>
-			</tr><!--  -->
+			</tr><!--  TTG-->
 			</c:if>
 			
 			<c:if test="${!ListProduct.isEmpty()}">
