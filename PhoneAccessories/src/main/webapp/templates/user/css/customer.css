@@ -1,0 +1,45 @@
+.profile {
+	width: 600px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 0 1px 4px rgba(10, 10, 10, .15);
+	padding: 20px;
+}
+
+profile-form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.profile-input {
+	margin: 20px 0 20px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.profile-body {
+	background-color: #F8F9FA;
+	padding: 20px;
+}
+
+.btnUpdate {
+	display: flex;
+	justify-content: center;
+}
+
+#input {
+	border-radius: 6px;
+	border-color: cornsilk;
+	height: 20px;
+	box-shadow: 0 1px 4px rgba(10, 10, 10, .15);
+}
+
+.profile-input label {
+	color: #444b52;
+}
