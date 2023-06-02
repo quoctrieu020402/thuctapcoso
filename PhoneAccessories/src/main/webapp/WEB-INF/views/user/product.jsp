@@ -282,12 +282,9 @@
 		
 </script>
 
-	<link rel="stylesheet" type="text/css"
-		href="owlcarousel/owl.carousel.min.css">
-	<link rel="stylesheet" type="text/css"
-		href="owlcarousel/owl.theme.default.min.css">
-	<script src="owlcarousel/owl.carousel.min.js"></script>
-	</div>
+
+	
+	
 
 </body>
 </html>

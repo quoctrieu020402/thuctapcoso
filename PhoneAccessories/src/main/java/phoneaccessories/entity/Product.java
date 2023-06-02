@@ -41,11 +41,11 @@ public class Product {
 	@JoinColumn(name = "MADANHMUC")
 	private Category category;
 	
-	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "MADONGMAY")
-	private MachineSeries  machineSeries;
+	private MachineSeries machineSeries;
 	
-	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "MACAUHINH")
 	private Config config;
 	
@@ -144,5 +144,27 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+
+	public MachineSeries getMachineSeries() {
+		return machineSeries;
+	}
+
+
+	public void setMachineSeries(MachineSeries machineSeries) {
+		this.machineSeries = machineSeries;
+	}
+
+
+	public Config getConfig() {
+		return config;
+	}
+
+
+	public void setConfig(Config config) {
+		this.config = config;
+	}
+	
+	
 	
 }
