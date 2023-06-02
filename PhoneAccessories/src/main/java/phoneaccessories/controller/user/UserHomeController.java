@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import phoneaccessories.Utils.SecurityUtils;
+import phoneaccessories.entity.Account;
 import phoneaccessories.entity.Product;
 import phoneaccessories.repository.OrderRepository;
 import phoneaccessories.repository.UserRepository;
@@ -47,6 +52,21 @@ public class UserHomeController {
 
 	@RequestMapping("/product")
 	public ModelAndView getProductListByCategoryId(@RequestParam(value = "categoryId", required = false) String id) {
+		ModelAndView mav = new ModelAndView("user/product");
+
+		Account account = null;
+		;
+
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication.getName().equals("anonymousUser")) {
+			
+			return mav;
+
+		} else {
+			account = accountService.getAccountById(SecurityUtils.getPrincipal().getUsername());
+			mav.addObject("account", account);
+		}
+
 		List<Product> productList = new ArrayList<>();
 		if (id == null) {
 			productList = productService.getListProduct();
@@ -56,8 +76,9 @@ public class UserHomeController {
 			productList = productService.getProductByCategoryId(id);
 			System.out.println("DĐ");
 		}
-		ModelAndView mav = new ModelAndView("user/product");
 		mav.addObject("listProduct", productList);
+
+		
 		return mav;
 	}
 
@@ -117,5 +138,4 @@ public class UserHomeController {
 		return mv;
 	}
 
-	
 }

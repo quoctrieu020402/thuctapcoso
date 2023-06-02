@@ -203,8 +203,8 @@
 			Bạn có thể thích *</h3>
 		<div class="listSpTrongKhung flexContain">
 			<c:forEach items="${suggestedProducts}" var="suggestedProduct">
-				<li class="sanPham"><a
-					href="/user/product_detail?id=${product.id }"> <img
+				<li class="sanPham">
+				<div><a href="/user/product_detail?id=${product.id }"> <img
 						src="${suggestedProduct.image }" alt="">
 						<h3>${suggestedProduct.name }</h3>
 						<div class="price">
@@ -224,7 +224,13 @@
 									vào giỏ</span> +
 							</button>
 						</div>
-				</a></li>
+						</a></div>
+						<div>
+						<a href=""> So sánh
+						</a>
+						</div>
+				
+				</li>
 				</c:forEach>
 		</div>
 	</div>
