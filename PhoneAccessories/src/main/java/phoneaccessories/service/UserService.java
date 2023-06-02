@@ -12,6 +12,7 @@ public interface UserService {
 	User getUserByAccount(String account);
 
 	void updateUser(User updateUser);
+
 	
 	
 }

@@ -204,24 +204,24 @@
 		<div class="listSpTrongKhung flexContain">
 			<c:forEach items="${suggestedProducts}" var="suggestedProduct">
 				<li class="sanPham">
-				<div>
-				<a
-					href="/user/product_detail?id=${product.id }"> <img
-						src="/templates/images/${suggestedProduct.image}" alt="">
-
-						<h3>${suggestedProduct.name}</h3>
-
-						<div class="price">
-							<strong>${suggestedProduct.price}</strong>
+						<div>
+							<a href="/user/product_detail?id=${product.id }"> <img
+								src="${suggestedProduct.image }" alt="">
+								<h3>${suggestedProduct.name }</h3>
+								<div class="price">
+									<strong>${suggestedProduct.price }</strong>
+								</div>
+							</a>
 						</div>
-				</a>
-				</div>
-					<div >
-						<a href="/user/${product.id }/compare/${suggestedProduct.id }/" class="compare"
-							style="height: 30px; padding: 0px; display: flex; justify-content: center; align-items: center; background: #61a461; color: white">So
-							sánh sản phẩm</a>
-					</div></li>
+						<div>
+							<a href="/user/${product.id }/compare/${suggestedProduct.id }/"
+								class="compare"
+								style="height: 30px; padding: 0px; display: flex; justify-content: center; align-items: center; background: #61a461; color: white">So
+								sánh sản phẩm</a>
+						</div>
+				</li>
 			</c:forEach>
 		</div>
+
 	</div>
 </div>

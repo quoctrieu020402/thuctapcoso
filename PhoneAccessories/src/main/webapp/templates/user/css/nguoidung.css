@@ -1,7 +1,15 @@
 /* .listDonHang {
     display: none;
 } */
-
+.fa-pencil {
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 7px;
+    transition-duration: .2s;
+    cursor: pointer;
+    min-width: 70px;
+}
 .infoUser table {
     border-collapse: collapse;
     margin: 0 auto;
