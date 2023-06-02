@@ -5,7 +5,7 @@
 <main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Thêm Danh Mục</h1>
+		<h1>Thêm phiếu nhập</h1>
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -22,7 +22,7 @@
 
 		<div class="row">
 
-			<h2 class="section-title">Thêm danh mục sản phẩm mới</h2>
+			<h2 class="section-title">Thêm phiếu nhập mới</h2>
 			<form:form class="form" action="add" method="post" modelAttribute="addreceipt">
 
 				<div class="form-group">
@@ -42,7 +42,7 @@
 					<form:select path="supplier.id" class="form-input" items="${suppliers}"  itemLabel="id" itemValue="id" 
 						  />
 				</div>
-				<p class="error" style="color: red; margin-left: 10px">lỗi</p>
+				<p class="error" style="color: red; margin-left: 10px"></p>
 				<div class="form-group">
 					<button class="btn btn-primary" type="submit">Thêm mới</button>
 				</div>

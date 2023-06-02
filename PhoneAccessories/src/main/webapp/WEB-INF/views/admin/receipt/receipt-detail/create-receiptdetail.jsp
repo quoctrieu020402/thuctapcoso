@@ -5,7 +5,7 @@
 <main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Danh sách danh mục</h1>
+		<h1>Chi tiết phiếu nhập</h1>
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -29,7 +29,7 @@
 				<table class="category-table" id="chiTietPhieuNhap">
 					<thead>
 						<tr>
-							<th>Mã sản phẩm</th>
+							<th>Sản phẩm</th>
 							<th>Số lượng</th>
 							<th>Giá Nhập</th>
 							<th>Tổng Tiền</th>

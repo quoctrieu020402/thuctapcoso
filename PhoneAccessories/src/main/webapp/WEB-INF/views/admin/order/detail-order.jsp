@@ -25,13 +25,13 @@
 			<div class="user-info">
 				<h3>Thông tin khách hàng</h3>
 				<div class="user-field">
-					<label>Họ tên:</label> <span>${order.user.surname} ${order.user.name}</span>
+					<label>Họ tên:</label> <span>${order.fullName}</span>
 				</div>
 				<div class="user-field">
-					<label>Số điện thoại:</label> <span>${order.user.sdt}</span>
+					<label>Số điện thoại:</label> <span>${order.phone}</span>
 				</div>
 				<div class="user-field">
-					<label>Địa chỉ:</label> <span>${order.user.address}</span>
+					<label>Địa chỉ:</label> <span>${order.address}</span>
 				</div>
 			</div>
 

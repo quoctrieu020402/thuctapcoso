@@ -5,7 +5,7 @@
 <main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Danh sách danh mục</h1>
+		<h1>Danh sách phiếu nhập</h1>
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="index.html">Home</a></li>

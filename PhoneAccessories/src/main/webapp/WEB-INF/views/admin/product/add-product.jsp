@@ -86,15 +86,15 @@
 						style="display: flex; flex-direction: column;">
 						<label for="exampleInputEmail1">Loại sản phẩm</label>
 						<form:select style="height: 40px;font-size: 20px;"
-							path="category.id" items="${categorys}" itemLabel="id"
+							path="category.id" items="${categorys}" itemLabel="name"
 							itemValue="id"></form:select>
 					</div>
 					
 					<div class="form-group"
 						style="display: flex; flex-direction: column;">
-						<label for="exampleInputEmail1">Loại sản phẩm</label>
+						<label for="exampleInputEmail1">Loại dòng máy</label>
 						<form:select style="height: 40px;font-size: 20px;"
-							path="machineSeries.id" items="${machineseries}" itemLabel="id"
+							path="machineSeries.id" items="${machineseries}" itemLabel="name"
 							itemValue="id"></form:select>
 					</div>
 					

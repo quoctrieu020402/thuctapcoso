@@ -64,7 +64,8 @@ public class AdminOrderController {
 	public ModelAndView confirmDetail(@RequestParam("ido") String ido ,@RequestParam(value = "status",required = false) String status) {
 		Account account = accountService.findByUsername(SecurityUtils.getPrincipal().getUsername());
 		
-		Staffs staff = staffService.findOneByAccount(account);
+		Staffs staff = account.getStaff();
+		System.out.println(account);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:/admin/order/list");
 		Long number = Long.valueOf(ido);

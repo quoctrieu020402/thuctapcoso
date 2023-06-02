@@ -49,7 +49,7 @@
 					<form:input path="sdt" class="form-input" type="text"
 						id="name"  />
 				</div>
-				<p class="error" style="color: red; margin-left: 10px">lỗi</p>
+				<p class="error" style="color: red; margin-left: 10px"></p>
 				<div class="form-group">
 					<button class="btn btn-primary" type="submit">Thêm mới</button>
 				</div>

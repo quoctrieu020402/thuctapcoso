@@ -19,7 +19,7 @@ public class Product {
 	@Id
 	@Column(name = "MASANPHAM",length = 10)
 	private String id;
-	@Column(name = "TENSANPHAM",length = 10)
+	@Column(name = "TENSANPHAM",length = 200)
 	private String name;
 	@Column(name = "MOTA",length = 5000)
 	private String description;
