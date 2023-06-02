@@ -37,7 +37,20 @@
 
 		<div class="tools-member">
 			<div class="member">
-				<security:authorize access="isAnonymous()">
+			<c:if test="${account.username == null }">
+				<a href="/login"> <i class="fa fa-user"></i>Tài khoản
+					</a>
+			</c:if>
+			<c:if test="${account.username != null }">
+				<a> <i class="fa fa-user"></i>${account.username }
+					</a>
+					<div class="menuMember hide">
+						<a href="/user/profile">Trang người dùng</a> <a
+							onclick="if(window.confirm('Xác nhận đăng xuất ?')) logOut();">Đăng
+							xuất</a>
+					</div>
+			</c:if>
+				<%-- <security:authorize access="isAnonymous()">
 					<a href="/login"> <i class="fa fa-user"></i>Tài khoản
 					</a>
 				</security:authorize>
@@ -49,7 +62,7 @@
 							onclick="if(window.confirm('Xác nhận đăng xuất ?')) logOut();">Đăng
 							xuất</a>
 					</div>
-				</security:authorize>
+				</security:authorize> --%>
 
 
 

@@ -191,7 +191,7 @@
 					color: #eee;
 				}
 				.member .hide {
-					display: none;
+					/* display: none; */
 				}
 			/* ======= End Member ======= */
 
