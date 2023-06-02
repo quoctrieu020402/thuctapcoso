@@ -144,5 +144,25 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+
+	public MachineSeries getMachineSeries() {
+		return machineSeries;
+	}
+
+
+	public void setMachineSeries(MachineSeries machineSeries) {
+		this.machineSeries = machineSeries;
+	}
+
+
+	public Config getConfig() {
+		return config;
+	}
+
+
+	public void setConfig(Config config) {
+		this.config = config;
+	}
 	
 }

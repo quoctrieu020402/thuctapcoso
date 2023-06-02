@@ -49,7 +49,14 @@
 							<td id="edit-cell">
 								<a href="edit?idp=${product.id}" class="edit-button" >Sửa</a>
 								<c:if test="${product.number == 0}">
-									<a href="delete?idp=${product.id}" class="edit-button" >Xóa</a>
+									<a style="background-color: red" href="delete?idp=${product.id}" class="edit-button" >Xóa</a>
+								</c:if>
+								<c:if test="${empty product.config}">
+									<a href="/admin/config/add?idp=${product.id}" class="edit-button" >Thêm cấu hình</a>
+								</c:if>
+								
+								<c:if test="${not empty product.config}">
+									<a href="/admin/config/list?idp=${product.id}" class="edit-button" >Xem cấu hình</a>
 								</c:if>
 							</td>
 						</tr>

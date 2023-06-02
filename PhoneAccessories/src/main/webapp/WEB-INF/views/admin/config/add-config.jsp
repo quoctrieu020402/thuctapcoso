@@ -5,7 +5,7 @@
 <main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Thêm sản phẩm</h1>
+		<h1>Thêm cấu hình</h1>
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -24,19 +24,12 @@
 
 			<h2 class="section-title">Thêm sản phẩm mới</h2>
 
-			<form:form modelAttribute="addProdcut" method="POST"
+			<form:form modelAttribute="addConfig" method="POST"
 				enctype="multipart/form-data"
 				style="border: 1px solid #ccc; padding: 20px ;">
 				<div class="card-body">
 
-					<div class="form-group">
-						<label for="exampleInputFile">File hình ảnh</label>
-						<div class="input-group">
-							<div class="custom-file">
-								<input type="file" name="avatar" id="exampleInputFile">
-							</div>
-						</div>
-					</div>
+				
 					<c:if test="${error != ''}">
 						<span>${error}</span>
 					</c:if>
@@ -44,59 +37,67 @@
 						<div class="alert alert-danger">${imgnull}</div>
 					</c:if>
 
-					<spring:bind path="id">
+					<spring:bind path="screenSize">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Mã sản phẩm</label>
-							<form:input type="text" class="form-control" path="id" />
+							<label for="exampleInputEmail1">Kích thước màn hình</label>
+							<form:input type="text" class="form-control" path="screenSize" />
 						</div>
 						<c:if test="${idnull != null}">
 							<div class="alert alert-danger">${idnull}</div>
 						</c:if>
 					</spring:bind>
 
-					<spring:bind path="name">
+					<spring:bind path="system">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Tên sản phẩm</label>
-							<form:input type="text" class="form-control" path="name" />
+							<label for="exampleInputEmail1">Hệ điều hành</label>
+							<form:input type="text" class="form-control" path="system" />
 						</div>
 						<c:if test="${namenull != null}">
 						<div class="alert alert-danger">${namenull}</div>
 					</c:if>
 					</spring:bind>
 
-					<spring:bind path="description">
+					<spring:bind path="ram">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Mô tả</label>
-							<form:textarea class="form-control" path="description" />
+							<label for="exampleInputEmail1">Ram</label>
+							<form:input class="form-control" path="ram" />
+						</div>
+						
+					</spring:bind>
+					
+					<spring:bind path="rom">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Rom</label>
+							<form:input class="form-control" path="rom" />
 						</div>
 						
 					</spring:bind>
 
-					<spring:bind path="price">
+					<spring:bind path="resolution">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Giá</label>
-							<form:input type="text" class="form-control" path="price" />
+							<label for="exampleInputEmail1">Độ phân giải</label>
+							<form:input type="text" class="form-control" path="resolution" />
+						</div>
+
+					</spring:bind>
+					
+					<spring:bind path="cardGraphic">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Card màn hình</label>
+							<form:input type="text" class="form-control" path="cardGraphic" />
+						</div>
+
+					</spring:bind>
+					
+					<spring:bind path="pin">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Pin</label>
+							<form:input type="text" class="form-control" path="pin" />
 						</div>
 
 					</spring:bind>
 
-
-
-					<div class="form-group"
-						style="display: flex; flex-direction: column;">
-						<label for="exampleInputEmail1">Loại sản phẩm</label>
-						<form:select style="height: 40px;font-size: 20px;"
-							path="category.id" items="${categorys}" itemLabel="id"
-							itemValue="id"></form:select>
-					</div>
 					
-					<div class="form-group"
-						style="display: flex; flex-direction: column;">
-						<label for="exampleInputEmail1">Loại sản phẩm</label>
-						<form:select style="height: 40px;font-size: 20px;"
-							path="machineSeries.id" items="${machineseries}" itemLabel="id"
-							itemValue="id"></form:select>
-					</div>
 					
 					
 
@@ -108,7 +109,7 @@
 					</c:if>
 				</c:if>
 				<div class="button">
-					<button type="submit" class="btn btn-primary">Tạo</button>
+					<button type="submit" class="btn btn-primary">Thêm</button>
 				</div>
 			</form:form>
 

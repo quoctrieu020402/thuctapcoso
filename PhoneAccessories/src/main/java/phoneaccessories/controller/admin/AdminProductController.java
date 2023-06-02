@@ -18,12 +18,14 @@ import org.springframework.web.servlet.ModelAndView;
 import phoneaccessories.Utils.SecurityUtils;
 import phoneaccessories.entity.Account;
 import phoneaccessories.entity.Category;
+import phoneaccessories.entity.MachineSeries;
 import phoneaccessories.entity.Product;
 import phoneaccessories.entity.Staffs;
 import phoneaccessories.repository.AccountRepository;
 import phoneaccessories.repository.ProductPepository;
 import phoneaccessories.service.AccountService;
 import phoneaccessories.service.CategoryService;
+import phoneaccessories.service.MachineSeriesService;
 import phoneaccessories.service.ProductService;
 import phoneaccessories.service.StaffService;
 import phoneaccessories.service.Impl.ProductServiceImpt;
@@ -46,7 +48,8 @@ public class AdminProductController {
 	@Autowired
 	private ProductPepository pepository;
 	
-	
+	@Autowired
+	private MachineSeriesService machineSeriesService;
 	@RequestMapping("product/list")
 	public ModelAndView listProduct() {
 		ModelAndView mav = new ModelAndView("admin/product/listproduct");
@@ -155,6 +158,13 @@ public class AdminProductController {
 	public List<Category> getCategories() {
 		List<Category> list = new ArrayList<Category>();
 		list.addAll(categoryService.getListCategory());
+		return list;
+	}
+	
+	@ModelAttribute("machineseries")
+	public List<MachineSeries> getMachineseries() {
+		List<MachineSeries> list = new ArrayList<MachineSeries>();
+		list.addAll(machineSeriesService.findAllByStatus(true));
 		return list;
 	}
 	
