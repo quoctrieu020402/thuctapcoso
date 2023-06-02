@@ -76,7 +76,7 @@ public class OrderController {
 
 		mav.addObject("list", listcart);
 
-		mav.addObject("sumMoney", String.format("%.3f", sumMoney));
+		mav.addObject("sumMoney", sumMoney);
 		
 		mav.addObject("user", account.getUser());
 

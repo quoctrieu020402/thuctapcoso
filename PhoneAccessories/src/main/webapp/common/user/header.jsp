@@ -4,7 +4,7 @@
 
 <div class="header group">
 	<div class="logo">
-		<a href="user/product"> <img src="img/logo.jpg"
+		<a href="user/product"> <img src="/templates/images/logo.png"
 			alt="Trang chủ Smartphone Store" title="Trang chủ Smartphone Store">
 		</a>
 	</div>

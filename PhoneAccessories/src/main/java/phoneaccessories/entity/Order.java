@@ -44,10 +44,9 @@ public class Order {
 	
 	@Column(name = "DIACHI", length = 500)
 	private String address;
-	
 
 	@Column(name = "TRANGTHAI", length = 500)
-	private String status;
+	private String status = "Đang xử lí";
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "MANV")

@@ -1,7 +1,9 @@
 
 package phoneaccessories.entity;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -166,6 +168,13 @@ public class Product {
 		this.config = config;
 	}
 	
-	
+	public String converVND(double money) {
+		Locale locale = new Locale("vi", "VN");
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
+        
+        
+        String formattedAmount = currencyFormatter.format(money);
+		return formattedAmount;
+	}
 	
 }
