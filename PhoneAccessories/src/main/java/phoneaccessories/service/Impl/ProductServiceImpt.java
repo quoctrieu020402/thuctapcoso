@@ -25,7 +25,7 @@ public class ProductServiceImpt implements ProductService{
 	@Override
 	public void save(Product product) {
 		Category category = categoryRepository.findOne(product.getCategory().getId());
-		
+		product.setStatus(true);
 		product.setCategory(category);
 		
 		productRepository.save(product);
@@ -38,7 +38,7 @@ public class ProductServiceImpt implements ProductService{
 		productold = product;
 		productold.setId(id);
 		productold.setNumber(num);
-		
+		productold.setStatus(true);
 		System.out.println(productold);
 		return productRepository.save(productold);
 		
