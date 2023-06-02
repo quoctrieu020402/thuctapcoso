@@ -46,7 +46,7 @@
 					<button ><i class="fa fa-plus" onclick="redirectPage(`<c:url value='/user/cart/${dc.card.id}/product/${dc.product.id}/add'/>`)"></i></button>
 				</td>
 				<td class="alignRight">${dc.product.price * dc.quantity}₫</td>
-				<td class="noPadding"> <i class="fa fa-trash" onclick="redirectPage(`<c:url value='/user/cart/${dc.card.id}/remove/product/${dc.product.id}/'/>`)"></i> </td>
+				<td class="noPadding"> <i class="fa fa-trash" onclick="redirectPage(`<c:url value='/user/cart/${dc.card.id}/remove/product/${dc.product.id}'/>`)"></i> </td>
 				</tr>
 				
 				</c:forEach>

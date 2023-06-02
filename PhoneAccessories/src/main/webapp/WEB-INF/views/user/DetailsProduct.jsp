@@ -11,7 +11,7 @@
 	</div>
 	<div class="rowdetail group">
 		<div class="picture">
-			<img src="${product.image}" onclick="opencertain()">
+			<img src="/templates/images/${product.image}" onclick="opencertain()">
 		</div>
 		<div class="price_sale">
 			<div class="area_price">
@@ -203,29 +203,25 @@
 			Bạn có thể thích *</h3>
 		<div class="listSpTrongKhung flexContain">
 			<c:forEach items="${suggestedProducts}" var="suggestedProduct">
-				<li class="sanPham"><a
+				<li class="sanPham">
+				<div>
+				<a
 					href="/user/product_detail?id=${product.id }"> <img
-						src="${suggestedProduct.image }" alt="">
-						<h3>${suggestedProduct.name }</h3>
-						<div class="price">
-							<strong>${suggestedProduct.price }</strong>
-						</div>
-						<div class="ratingresult">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i
-								class="fa fa-star"></i><i class="fa fa-star"></i><i
-								class="fa fa-star-o"></i><span>347 đánh giá</span>
-						</div>
+						src="/templates/images/${suggestedProduct.image}" alt="">
 
-						<div class="tooltip">
-						
-							<button class="themvaogio"
-								onclick="themVaoGioHang('Xia3', 'Xiaomi Redmi 5 Plus 4GB'); return false;">
-								<span class="tooltiptext" style="font-size: 15px;">Thêm
-									vào giỏ</span> +
-							</button>
+						<h3>${suggestedProduct.name}</h3>
+
+						<div class="price">
+							<strong>${suggestedProduct.price}</strong>
 						</div>
-				</a></li>
-				</c:forEach>
+				</a>
+				</div>
+					<div >
+						<a href="/user/${product.id }/compare/${suggestedProduct.id }/" class="compare"
+							style="height: 30px; padding: 0px; display: flex; justify-content: center; align-items: center; background: #61a461; color: white">So
+							sánh sản phẩm</a>
+					</div></li>
+			</c:forEach>
 		</div>
 	</div>
 </div>
