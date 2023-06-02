@@ -59,7 +59,16 @@ public class UserHomeController {
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (authentication.getName().equals("anonymousUser")) {
-			
+			List<Product> productList = new ArrayList<>();
+			if (id == null) {
+				productList = productService.getListProduct();
+				System.out.println("AAa");
+
+			} else {
+				productList = productService.getProductByCategoryId(id);
+				System.out.println("DĐ");
+			}
+			mav.addObject("listProduct", productList);
 			return mav;
 
 		} else {

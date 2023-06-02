@@ -39,13 +39,13 @@
 						<img src="#">
 					</a>
 				</td>
-				<td class="alignRight">${dc.product.price } ₫</td>
+				<td class="alignRight">${dc.product.converVND(dc.product.price) }</td>
 				<td class="soluong">
 					<button ><i class="fa fa-minus" onclick="redirectPage(`<c:url value='/user/cart/${dc.card.id}/product/${dc.product.id}/except'/>`)"></i></button>
 					<input size="1" onchange="" value="${dc.quantity }">
 					<button ><i class="fa fa-plus" onclick="redirectPage(`<c:url value='/user/cart/${dc.card.id}/product/${dc.product.id}/add'/>`)"></i></button>
 				</td>
-				<td class="alignRight">${dc.product.price * dc.quantity}₫</td>
+				<td class="alignRight">${dc.product.converVND(dc.product.price * dc.quantity)}</td>
 				<td class="noPadding"> <i class="fa fa-trash" onclick="redirectPage(`<c:url value='/user/cart/${dc.card.id}/remove/product/${dc.product.id}'/>`)"></i> </td>
 				</tr>
 				

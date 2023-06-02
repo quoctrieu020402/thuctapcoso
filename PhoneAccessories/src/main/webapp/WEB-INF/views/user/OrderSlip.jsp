@@ -30,19 +30,19 @@
 						<td>${loop.index + 1 }</td>
 					<td class="noPadding imgHide"><a target="_blank"
 						href="chitietsanpham.html?Xiaomi-Redmi-Note-5"
-						title="Xem chi tiết"> ${dc.product.name } <img
+						title="Xem chi tiết"> ${dc.product.name} <img
 							src="img/products/xiaomi-redmi-note-5-pro-600x600.jpg">
 					</a></td>
-					<td class="alignRight">${dc.product.price } ₫</td>
-					<td class="soluong">${dc.quantity }</td>
-					<td class="alignRight">${dc.product.price * dc.quantity} ₫</td>
+					<td class="alignRight">${dc.product.converVND(dc.product.price)}</td>
+					<td class="soluong">${dc.quantity}</td>
+					<td class="alignRight">${dc.product.converVND(dc.product.price * dc.quantity)}</td>
 
 				</tr>
 					</c:forEach>
 
 				<tr style="font-weight: bold; text-align: center; height: 4em;">
 					<td colspan="4">TỔNG TIỀN:</td>
-					<td class="alignRight">${sumMoney}</td>
+					<td class="alignRight" id="totalMoney"></td>
 					
 				</tr>
 			</tbody>
@@ -79,7 +79,7 @@
 							<tr>
 								<td>Ghi chú</td>
 								<td><textarea name="nd" rows="5" cols="42" maxlength="500"
-										wrap="physical" placeholder="Nội dung liên hệ"  style="width:100%"></textarea></td>
+										wrap="physical" placeholder="Ghi chú"  style="width:100%"></textarea></td>
 							</tr>
 							<tr>
 							<tr>
@@ -97,5 +97,20 @@
 
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+		function convertTotalMoney(){
+			let element = document.getElementById("totalMoney");
+			
+			const amount = ${sumMoney};
+			
+			let vnd = amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+
+			element.innerHTML = vnd;
+
+		}
+		
+		convertTotalMoney();
+	</script>
 </body>
 </html>
